@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:hellow_world/pages/hello_path/hello_path_binding.dart';
+import 'package:hellow_world/pages/hello_path/hello_path_view.dart';
 import 'package:hellow_world/pages/hellow_about/hellow_about_binding.dart';
 import 'package:hellow_world/pages/hellow_about/hellow_about_view.dart';
+import 'package:hellow_world/pages/hellow_about/hellow_dance.dart';
 import 'package:hellow_world/pages/hellow_main/hellow_main_binding.dart';
 import 'package:hellow_world/pages/hellow_main/hellow_main_view.dart';
 import 'package:hellow_world/pages/hellow_setting/hellow_setting_binding.dart';
@@ -46,7 +49,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       getPages: Lights,
-      initialRoute: '/helloMain',
+      initialRoute: '/',
       theme: ThemeData(
         useMaterial3: true,
         primaryColor: primaryColor,
@@ -99,7 +102,9 @@ class MyApp extends StatelessWidget {
 }
 
 List<GetPage<dynamic>> Lights = [
+  GetPage(name: '/', page: () => const HelloPathView(), binding: HelloPathBinding()),
   GetPage(name: '/helloMain', page: () => HellowMainPage(), binding: HellowMainBinding()),
+  GetPage(name: '/doing', page: () => const HellowDance()),
   GetPage(name: '/helloAbout', page: () => HellowAboutPage(), binding: HellowAboutBinding()),
   GetPage(name: '/helloSetting', page: () => HellowSettingPage(), binding: HellowSettingBinding()),
 ];

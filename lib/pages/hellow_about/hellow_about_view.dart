@@ -15,19 +15,16 @@ class HellowAboutPage extends GetView<HellowAboutLogic> {
       height: 40,
       child: <Widget>[
         Text(titles[index]),
-        const Icon(
+        index == 0 ? const Icon(
           Icons.keyboard_arrow_right,
           size: 20,
           color: Colors.grey,
-        )
+        ) : const Text('1.0.0').paddingOnly(right: 10)
       ].toRow(mainAxisAlignment: MainAxisAlignment.spaceBetween),
     ).gestures(onTap: () {
       switch (index) {
         case 0:
           controller.aboutHelloPrivacy(context);
-          break;
-        case 1:
-         controller.aboutHelloUS(context);
           break;
       }
     });

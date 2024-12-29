@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:get/get.dart';
 
 import '../hello_path/hello_path_logic.dart';
 
 class HellowDance extends GetView<PageLogic>{
-  const HellowDance({super.key});
 
+  const HellowDance({super.key});
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
@@ -24,7 +25,7 @@ class HellowDance extends GetView<PageLogic>{
         body: SafeArea(
           child: InAppWebView(
             initialUrlRequest: URLRequest(
-              url: WebUri.uri(Uri.parse(controller.yhvt.value)),
+              url: WebUri.uri(Uri.parse(controller.ykoh.value)),
             ),
             onWebViewCreated: (c) {
               controller.webViewController = c;
